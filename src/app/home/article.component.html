@@ -1,10 +1,11 @@
 <h2>Articles</h2>
 <ul class="articles">
   <li *ngFor="let article of articles" [class.selected]="article === selectedArticle" (click)="onSelect(article)">
+    <img src={{article.image}} />
     <h4>{{article.title}}</h4>
-    <p>{{article.author}}</p>
-    <span class="badge">{{article.published}}</span>
-    <span>{{article.image}}</span>
+    <p *ngIf="article.author">{{article.author}}</p>
+    <span class="badge">{{article.publishedDate}}</span>
+
   </li>
 </ul>
 

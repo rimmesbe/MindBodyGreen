@@ -13,19 +13,15 @@ export class ArticleService {
         return this.http.get('https://s3.amazonaws.com/mbgd/feed/prod-test-7fc12640-6f09-4461-b683-3e55acdfd4f4.json')
             .toPromise()
             .then(this.extractData)
+            .then((data) => this.parseData(data))
             .catch(this.handleError);
         // return Promise.resolve(ARTICLES);
     }
 
     private extractData(res: Response) {
-        let articles = res.json();
-        let parsedData: Article[] = [];
-
-        for(let i in articles){
-            parsedData.push(this.parseData(articles[i]));
-        }
-
-        return parsedData;
+        let body = res.json();
+        console.log("body>>>> " + body);
+        return body || { };
     }
 
     private handleError (error: any) {
@@ -36,16 +32,21 @@ export class ArticleService {
     }
 
     private parseData(data) {
-      let article: Article = {
-        title: data['title'],
-        id: data['id'],
-        publishedDate: data['publishedDate'],
-        lastUpdate: data['lastUpdate'],
-        body: data['body'],
-        author: data['author'],
-        image: data['image']
-      };
-      return article;
+        let articles: Article[] = [];
+        for(let i in data){
+            let article: Article = {
+                title: data[i]['title'],
+                id: data[i]['id'],
+                publishedDate: data[i]['publishedDate'],
+                lastUpdate: data[i]['lastUpdate'],
+                body: data[i]['body'],
+                author: data[i]['author'],
+                image: data[i]['image']
+            };
+            articles.push(article);
+        }
+        console.log('articles >>> '+articles);
+      return articles;
     }
 
 }
