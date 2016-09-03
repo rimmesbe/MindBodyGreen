@@ -3,7 +3,7 @@
   <li *ngFor="let article of articles" [class.selected]="article === selectedArticle" (click)="onSelect(article)">
     <img src={{article.image}} />
     <h4>{{article.title}}</h4>
-    <p *ngIf="article.author">{{article.author}}</p>
+    <p *ngIf="article.author">{{article.author.name}}</p>
     <span class="badge">Published: {{article.publishDate | date: 'short'}}</span>
 
   </li>
