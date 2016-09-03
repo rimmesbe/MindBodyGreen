@@ -15,12 +15,10 @@ export class ArticleService {
             .then(this.extractData)
             .then((data) => this.parseData(data))
             .catch(this.handleError);
-        // return Promise.resolve(ARTICLES);
     }
 
     private extractData(res: Response) {
         let body = res.json();
-        console.log("body>>>> " + body);
         return body || { };
     }
 
@@ -37,15 +35,14 @@ export class ArticleService {
             let article: Article = {
                 title: data[i]['title'],
                 id: data[i]['id'],
-                publishedDate: data[i]['publishedDate'],
-                lastUpdate: data[i]['lastUpdate'],
+                publishDate: new Date(data[i]['publishDate']),
+                lastUpdate: new Date(data[i]['lastUpdate']),
                 body: data[i]['body'],
                 author: data[i]['author'],
                 image: data[i]['image']
             };
             articles.push(article);
         }
-        console.log('articles >>> '+articles);
       return articles;
     }
 

@@ -1,8 +1,8 @@
 export interface Article {
     title: string;
     id: number;
-    publishedDate: number; //"M/d/yyyy h:mm A"
-    lastUpdate: number; //"M/d/yyyy h:mm A"
+    publishDate: Date; //"M/d/yyyy h:mm A"
+    lastUpdate: Date;
     body: string;
     author: string;
     image: string;
