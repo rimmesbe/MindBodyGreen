@@ -1,8 +1,55 @@
 // styles in src/style directory are applied to the whole page
+$blue: #00a7df;
+$orange: #f79222;
+$green: #75d54f;
+
+
 body {
-    background: #0147A7;
-    color: #fff;
+    background: #fff;
+    margin: 0;
 }
+
+footer {
+    background-color: $blue;
+    color: $orange;
+    height: 80px;
+}
+
+footer h2 {
+    line-height: 80px;
+    font-size: 2em;
+}
+
 a {
     color: #03A9F4;
 }
+
+header.header-style {
+    background-color: $blue !important;
+
+    h2 {
+        color: $orange;
+        padding-right: 30px;
+    }
+    a {
+        color: $green;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+.margin--none {
+    margin: 0px;
+}
+
+.float--right {
+    float: right;
+}
+
+.float--left {
+    float: left;
+}
+

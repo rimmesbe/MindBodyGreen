@@ -1,16 +1,15 @@
-<header>
+<header class="header-style">
   <nav>
-    <a [routerLink]="['']">Article</a>
-    <a [routerLink]="['about']">About</a>
+    <h2 class="float--left margin--none"><a [routerLink]="['']">Articles</a></h2>
+    <h2 class="float--right margin--none">Top articles on the web!</h2>
   </nav>
 </header>
 <main>
-  <h1>MindBodyGreen</h1>
 
   <!-- Images (and assets) are parsed and loaded from within the public directory -->
 
   <router-outlet></router-outlet>
 </main>
 <footer>
-  <a [href]="url">Webpack Angular 2 Starter</a>
+  <h2 class="margin--none">Thanks for visiting!</h2>
 </footer>
