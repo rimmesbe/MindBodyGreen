@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ArticleService} from '../shared/services/article.service';
 import {Article} from '../shared/article.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'my-article',
@@ -13,7 +14,7 @@ export class ArticleComponent implements OnInit {
   selectedArticle: Article;
 
   constructor(
-      // private _router: Router,
+      private _router: Router,
       private _articleService: ArticleService) { }
 
   getArticles(): void {
@@ -24,6 +25,9 @@ export class ArticleComponent implements OnInit {
     this.getArticles();
   }
 
-  onSelect(article: Article) { this.selectedArticle = article; }
+  gotoDetail(article: Article): void {
+    let link = ['/article-detail', article.id];
+    this._router.navigate(link);
+  }
 
 }
