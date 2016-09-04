@@ -1,4 +1,5 @@
 // styles in src/style directory are applied to the whole page
+@import "../../node_modules/material-design-lite/src/material-design-lite.scss";
 $blue: #00a7df;
 $orange: #f79222;
 $green: #75d54f;
@@ -12,17 +13,18 @@ body {
 footer {
     background-color: $blue;
     color: $orange;
-    height: 80px;
+    height: 60px;
     h2 {
-        line-height: 80px;
+        line-height: 60px;
         font-size: 2em;
     }
 }
 
-header.header-style {
+header {
     background-color: $blue !important;
-
+    padding: 5px !important;
     h2 {
+        font-size: 2em;
         color: $orange;
         padding-right: 30px;
     }
