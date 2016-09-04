@@ -1,7 +1,7 @@
 import { Article } from '../article.interface';
 import { Injectable } from '@angular/core';
 import { ARTICLES } from './mock-articles';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class ArticleService {
@@ -18,22 +18,7 @@ export class ArticleService {
 
     getArticle(id: number): Promise<Article> {
         return this.loadArticles()
-            // .then(articles => articles.filter(article => article.id === id)[0]);
-            // .then(articles => this.showData(articles, id));
             .then(articles => articles.find(article => article.id === id));
-    }
-
-    showData(data, id) {
-        console.log(id);
-        for(let i=0; i<data.length; i++){
-
-        }
-
-        let articles = data;
-        // let article = articles.filter(article => article.id === id)[0];
-        let article = articles.find(article => article.id === id);
-        console.log("article >> " + article);
-
     }
 
     private extractData(res: Response) {
