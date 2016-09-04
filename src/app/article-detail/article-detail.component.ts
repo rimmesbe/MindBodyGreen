@@ -36,4 +36,9 @@ export class ArticleDetailComponent implements OnInit {
     this._router.navigate(link);
   }
 
+  // gotoList(): void {
+  //   let link = ['/article-detail', article.id-1];
+  //   this._router.navigate(link);
+  // }
+
 }

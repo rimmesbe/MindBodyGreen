@@ -1,6 +1,7 @@
 <div *ngIf="article">
   <div>
     <span *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"><< Previous Article </span>
+    <a [routerLink]="['']">Article List</a>
     <span (click)="gotoNext(article)">Next Article >></span>
   </div>
 
@@ -14,4 +15,5 @@
 
 <div *ngIf="!(article)">
   <h3>No more articles</h3>
+  <a [routerLink]="['']">Return to Article List</a>
 </div>
