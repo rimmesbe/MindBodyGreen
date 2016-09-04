@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ApiService } from './shared';
+import {ArticleService} from "./shared/services/article.service";
 import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -24,7 +25,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     ArticleDetailComponent
   ],
   providers: [
-    ApiService
+      ApiService,
+      ArticleService
   ],
   bootstrap: [AppComponent]
 })

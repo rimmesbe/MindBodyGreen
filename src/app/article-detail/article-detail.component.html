@@ -10,6 +10,14 @@
   <p>author: {{article.author.name}}</p>
   <p>published: {{article.publishDate | date: 'short'}}</p>
   <div [innerHtml]="article.body"></div>
+  <div>
+    <label>image url: </label>
+    <input size="40" [(ngModel)]="article.image" placeholder="image_url" />
+    <label>Title: </label>
+    <input size="40" [(ngModel)]="article.title" placeholder="title" />
+    <textarea rows="12" cols="150" [(ngModel)]="article.body" placeholder="body" ></textarea>
+  </div>
+  <button (click)="save()">Save</button>
 
 </div>
 

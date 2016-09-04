@@ -6,8 +6,7 @@ import {Article} from '../shared/article.interface';
 @Component({
   selector: 'my-article-detail',
   templateUrl: './article-detail.component.html',
-  styleUrls: ['./article-detail.component.scss'],
-  providers: [ArticleService]
+  styleUrls: ['./article-detail.component.scss']
 })
 export class ArticleDetailComponent implements OnInit {
   article: Article;
@@ -15,7 +14,7 @@ export class ArticleDetailComponent implements OnInit {
   constructor(
       private _articleService: ArticleService,
       private _route: ActivatedRoute,
-      private _router: Router,
+      private _router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,9 +35,9 @@ export class ArticleDetailComponent implements OnInit {
     this._router.navigate(link);
   }
 
-  // gotoList(): void {
-  //   let link = ['/article-detail', article.id-1];
-  //   this._router.navigate(link);
-  // }
+  // ** this is where we would call save for updating the article **
+  save(): void {
+    // this._articleService.update(this.article)
+  }
 
 }

@@ -50,4 +50,14 @@ export class ArticleService {
         return Promise.reject(errMsg);
     }
 
+    // **this is where we would send a puts request to update database**
+    // update(article: Article): Promise<Article> {
+        // const url = `${this.articleUrl}/${article.id}`;
+        // return this.http
+        //     .put(url, JSON.stringify(article))
+        //     .toPromise()
+        //     .then(() => article)
+        //     .catch(this.handleError);
+    // }
+
 }
