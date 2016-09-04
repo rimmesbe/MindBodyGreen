@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 
 import { TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { ArticleComponent } from './article.component';
 
-describe('Home Component', () => {
-  const html = '<my-home></my-home>';
+describe('Article Component', () => {
+  const html = '<article></article>';
 
   beforeEach(() => {
-    TestBed.configureTestingModule({declarations: [HomeComponent, TestComponent]});
+    TestBed.configureTestingModule({declarations: [ArticleComponent, TestComponent]});
     TestBed.overrideComponent(TestComponent, { set: { template: html }});
   });
 
