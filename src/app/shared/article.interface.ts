@@ -1,6 +1,7 @@
 export interface Article {
-    title: string;
     id: number;
+    title: string;
+    articleId: number;
     publishDate: Date; //"M/d/yyyy h:mm A"
     lastUpdate: Date;
     body: string;

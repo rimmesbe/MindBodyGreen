@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ArticleService} from '../shared/services/article.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Article} from '../shared/article.interface';
 
 @Component({
@@ -14,16 +14,26 @@ export class ArticleDetailComponent implements OnInit {
 
   constructor(
       private _articleService: ArticleService,
-      private _route: ActivatedRoute
+      private _route: ActivatedRoute,
+      private _router: Router,
   ) { }
 
   ngOnInit(): void {
     this._route.params.forEach((params: Params) => {
       let id = +params['id'];
       this._articleService.getArticle(id)
-          // .then(article => console.log("article>> "+ article));
           .then(article => this.article = article);
     });
+  }
+
+  gotoNext(article: Article): void {
+    let link = ['/article-detail', article.id+1];
+    this._router.navigate(link);
+  }
+
+  gotoPrevious(article: Article): void {
+    let link = ['/article-detail', article.id-1];
+    this._router.navigate(link);
   }
 
 }

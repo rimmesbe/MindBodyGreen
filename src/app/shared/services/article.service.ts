@@ -24,11 +24,13 @@ export class ArticleService {
     private extractData(res: Response) {
         let data = res.json();
         let articles: Article[] = [];
+        let idx = 1;
 
         for(let i=0; i<data.length; i++){
             let article: Article = {
+                id: idx,
                 title: data[i]['title'],
-                id: parseInt(data[i]['id']), // no error thrown for wrong data-type? thanks typescript
+                articleId: parseInt(data[i]['id']), // no error thrown for wrong data-type? thanks typescript
                 publishDate: new Date(data[i]['publishDate']),
                 lastUpdate: new Date(data[i]['lastUpdate']),
                 body: data[i]['body'],
@@ -36,6 +38,7 @@ export class ArticleService {
                 image: data[i]['image']
             };
             articles.push(article);
+            idx++;
         }
         return articles;
     }

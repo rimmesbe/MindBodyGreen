@@ -1,8 +1,17 @@
 <div *ngIf="article">
+  <div>
+    <span *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"><< Previous Article </span>
+    <span (click)="gotoNext(article)">Next Article >></span>
+  </div>
+
   <img src={{article.image}} />
   <h2>{{article.title | uppercase}}</h2>
   <p>author: {{article.author.name}}</p>
   <p>published: {{article.publishDate | date: 'short'}}</p>
   <div [innerHtml]="article.body"></div>
 
+</div>
+
+<div *ngIf="!(article)">
+  <h3>No more articles</h3>
 </div>

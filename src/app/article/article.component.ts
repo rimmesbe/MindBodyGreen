@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class ArticleComponent implements OnInit {
   public articles: Article[];
-  selectedArticle: Article;
 
   constructor(
       private _router: Router,
