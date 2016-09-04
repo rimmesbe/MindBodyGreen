@@ -13,15 +13,10 @@ footer {
     background-color: $blue;
     color: $orange;
     height: 80px;
-}
-
-footer h2 {
-    line-height: 80px;
-    font-size: 2em;
-}
-
-a {
-    color: #03A9F4;
+    h2 {
+        line-height: 80px;
+        font-size: 2em;
+    }
 }
 
 header.header-style {
