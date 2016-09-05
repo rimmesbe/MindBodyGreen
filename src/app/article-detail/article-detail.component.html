@@ -1,8 +1,8 @@
 <div class="mdl-grid" *ngIf="article">
   <div class="mdl-cell mdl-cell--2-col">
-    <span *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"  class="article-previous__span">
+    <button *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"  class="article-btn__previous">
       << Previous Article
-    </span>
+    </button>
   </div>
 
   <div class="mdl-cell mdl-cell--8-col article-title">
@@ -16,7 +16,7 @@
   </div>
 
   <div class="mdl-cell mdl-cell--2-col">
-    <span (click)="gotoNext(article)" class="article-next__span">Next Article >></span>
+    <button (click)="gotoNext(article)" class="article-btn__next">Next Article >></button>
   </div>
 
   <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
@@ -27,15 +27,26 @@
     <div [innerHtml]="article.body" class="article-body"></div>
   </div>
 
-  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
-    <div>
-      <label>image url: </label>
-      <input size="40" [(ngModel)]="article.image" placeholder="image_url" />
-      <label>Title: </label>
-      <input size="40" [(ngModel)]="article.title" placeholder="title" />
-      <textarea rows="12" cols="150" [(ngModel)]="article.body" placeholder="body" ></textarea>
+  <div class="mdl-cell mdl-cell--12-col">
+    <button (click)="showEdit = !showEdit;" class="article-btn">Edit Article</button>
+  </div>
+
+  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset article-edit" [style.display]="getStyle()">
+    <div class="mdl-grid mdl-grid--nesting">
+      <div class="mdl-cell mdl-cell--6-col">
+        <label>Image Url: </label>
+        <input class="article-input" size="50" [(ngModel)]="article.image" placeholder="image_url" />
+      </div>
+      <div class="mdl-cell mdl-cell--6-col">
+        <label>Title: </label>
+        <input class="article-input" size="50" [(ngModel)]="article.title" placeholder="title" />
+      </div>
     </div>
-    <button (click)="save()">Save</button>
+
+    <div>
+      <textarea rows="12" [(ngModel)]="article.body" placeholder="body" ></textarea>
+    </div>
+    <button (click)="save()" class="article-btn">Save Changes</button>
   </div>
 
 </div>

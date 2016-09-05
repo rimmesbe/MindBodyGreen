@@ -12,6 +12,7 @@ import {ViewEncapsulation} from '@angular/core';
 })
 export class ArticleDetailComponent implements OnInit {
   article: Article;
+  showEdit: Boolean = false;
 
   constructor(
       private _articleService: ArticleService,
@@ -40,6 +41,14 @@ export class ArticleDetailComponent implements OnInit {
   // ** this is where we would call save for updating the article **
   save(): void {
     // this._articleService.update(this.article)
+  }
+
+  getStyle() {
+    if(this.showEdit){
+      return "block";
+    } else {
+      return "none";
+    }
   }
 
 }

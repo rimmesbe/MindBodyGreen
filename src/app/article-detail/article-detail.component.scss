@@ -1,3 +1,9 @@
+button {
+  font-size: 1.2em;
+  &:focus {
+    outline-style: none;
+  }
+}
 
 .article-title {
   h2 {
@@ -36,7 +42,23 @@
   height: 70vh;
 }
 
-.article-next__span {
+.article-edit {
+  label {
+    color: #f79222;
+    font-weight: bold;
+  }
+  textarea {
+    width: 100%;
+  }
+  .article-input {
+    height: 5vh;
+    line-height: 5vh;
+    font-size: 1em;
+    border: 1px solid #00a7df;
+  }
+}
+
+.article-btn__next {
   border: 1px solid #00a7df;
   padding: 10px 15px;
   border-radius: 5px 25px 25px 5px;
@@ -51,10 +73,24 @@
 }
 
 //TODO: should pull out to mixin
-.article-previous__span {
+.article-btn__previous {
   border: 1px solid #00a7df;
   padding: 10px 15px;
   border-radius: 25px 5px 5px 25px;
+  background: #75d54f;
+  color: #00a7df;
+  cursor: pointer;
+
+  &:hover {
+    color: #f79222; //TODO: need variable folder for color variables
+    text-shadow: 1px 1px #00a7df;
+  }
+}
+
+.article-btn {
+  border: 1px solid #00a7df;
+  padding: 10px 15px;
+  border-radius: 15px 15px 15px 15px;
   background: #75d54f;
   color: #00a7df;
   cursor: pointer;
