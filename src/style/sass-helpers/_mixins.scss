@@ -1,0 +1,19 @@
+@mixin set-font($color: initial, $size: initial, $family: initial, $weight: initial){
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+}
+
+@mixin btn($size: $btn-medium, $radius: initial) {
+  border: 1px solid $blue;
+  border-radius: $radius;
+  padding: $size;
+  background: $green;
+  color: $blue;
+  cursor: pointer;
+  &:hover {
+    color: $orange;
+    text-shadow: 1px 1px $blue;
+  }
+}

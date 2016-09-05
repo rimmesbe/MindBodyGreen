@@ -1,5 +1,6 @@
 @import "../../style/sass-helpers/variables";
 @import "../../style/sass-helpers/placeholders";
+@import "../../style/sass-helpers/mixins";
 
 img {
   max-width: 100%;
@@ -14,10 +15,9 @@ button {
 
 .article-title {
   h2 {
-    font-size: 2.5em;
+    @include set-font($article-detail-title-font...);
     line-height: 40px;
     margin-bottom: 10px;
-    font-family: $merriweather;
   }
   span {
     margin-left: 30px;
@@ -26,12 +26,11 @@ button {
 
 .article-body {
   h2 {
-    font-size: 2em;
-    font-family: $merriweather;
+    @include set-font($article-body-h2-font...);
   }
   p {
+    @include set-font($article-body-p-font...);
     text-align: left;
-    font-family: $open-sans;
   }
   a {
     color: blue;
@@ -47,33 +46,30 @@ button {
 
 .article-edit {
   label {
-    color: $orange;
-    font-weight: bold;
+    @include set-font($article-edit-label-font...);
   }
   textarea {
     width: 100%;
+    line-height: 1.4em;
   }
-  .article-input {
+  input {
+    @include set-font($article-edit-input-font...);
     height: 5vh;
     line-height: 5vh;
-    font-size: 1em;
     border: 1px solid $blue;
   }
 }
 
 .article-btn {
-  border-radius: $center;
-  @extend %btn;
+  @include btn($size: $btn-medium, $radius: $center);
 }
 
 .article-btn__next {
-  border-radius: $right;
-  @extend %btn;
+  @include btn($size: $btn-medium, $radius: $right);
 }
 
 .article-btn__previous {
-  border-radius: $left;
-  @extend %btn;
+  @include btn($size: $btn-medium, $radius: $left);
 }
 
 
