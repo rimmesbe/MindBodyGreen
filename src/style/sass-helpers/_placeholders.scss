@@ -1,0 +1,13 @@
+%btn {
+  border: 1px solid $blue;
+  padding: 10px 15px;
+  background: $green;
+  color: $blue;
+  cursor: pointer;
+  &:hover {
+    color: $orange;
+    text-shadow: 1px 1px $blue;
+  }
+}
+
+

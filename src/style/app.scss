@@ -1,8 +1,6 @@
 // styles in src/style directory are applied to the whole page
 @import "../../node_modules/material-design-lite/src/material-design-lite.scss";
-$blue: #00a7df;
-$orange: #f79222;
-$green: #75d54f;
+@import "./sass-helpers/variables";
 
 
 body {
@@ -27,7 +25,7 @@ header {
         font-size: 2em;
         color: $orange;
         padding-right: 30px;
-      font-family: 'Merriweather', serif;
+        font-family: $merriweather;
     }
     a {
         color: $green;

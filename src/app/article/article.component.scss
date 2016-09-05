@@ -1,3 +1,5 @@
+@import "../../style/sass-helpers/variables";
+
 .articles {
   list-style: none;
   img {
@@ -6,19 +8,19 @@
   li {
     cursor: pointer;
     &:hover {
-      color: #f79222;
+      color: $orange;
     }
   }
   h4 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $open-sans;
   }
 }
 
 .article-title__index {
-  font-family: 'Merriweather', serif;
-  color: #00a7df;
+  font-family: $merriweather;
+  color: $blue;
   font-size: 4em;
-  text-shadow: 1px 1px #f79222;
+  text-shadow: 1px 1px $orange;
   margin-bottom: 0;
   text-align: left;
 }
