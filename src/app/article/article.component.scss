@@ -1,4 +1,33 @@
-// component styles are encapsulated and only applied to their components
-* {
-  color: #FFEF00;
+.articles {
+  list-style: none;
+  img {
+    width: 100%;
+  }
+  li {
+    cursor: pointer;
+    &:hover {
+      color: #f79222;
+    }
+  }
+  h4 {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.article-title__index {
+  font-family: 'Merriweather', serif;
+  color: #00a7df;
+  font-size: 4em;
+  text-shadow: 1px 1px #f79222;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.mdl-grid.mdl-grid--no-spacing > .mdl-cell {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.border-bottom__lightgrey {
+  border-bottom: 1px solid lightgrey;
 }
