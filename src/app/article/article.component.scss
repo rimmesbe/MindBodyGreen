@@ -1,12 +1,12 @@
 @import "../../style/sass-helpers/variables";
 @import "../../style/sass-helpers/mixins";
 
-.articles {
+article {
   list-style: none;
   img {
     width: 100%;
   }
-  li {
+  section {
     cursor: pointer;
     &:hover {
       color: $orange;
@@ -14,6 +14,7 @@
   }
   h4 {
     font-family: $open-sans;
+    padding: 0px 10px 0px 10px;
   }
 }
 

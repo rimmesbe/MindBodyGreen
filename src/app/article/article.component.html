@@ -3,18 +3,17 @@
     <h2 class="article-title__index">-Latest Articles-</h2>
   </div>
   <div class="mdl-cell mdl-cell--12-col">
-    <ul class="articles">
+    <article>
       <div class="mdl-grid mdl-grid--nesting mdl-grid--no-spacing">
         <div *ngFor="let article of articles" class="mdl-cell mdl-cell--4-col border-bottom__lightgrey">
-          <li (click)="gotoDetail(article)">
+          <section (click)="gotoDetail(article)">
             <img src={{article.image}} />
             <h4>{{article.title}}</h4>
             <p *ngIf="article.author">{{article.author.name}}</p>
             <span class="badge">Published: {{article.publishDate | date: 'short'}}</span>
-          </li>
+          </section>
         </div>
       </div>
-
-    </ul>
+    </article>
   </div>
 </div>

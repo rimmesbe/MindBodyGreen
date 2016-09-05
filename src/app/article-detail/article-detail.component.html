@@ -1,4 +1,4 @@
-<div class="mdl-grid" *ngIf="article">
+<article class="mdl-grid" *ngIf="article">
   <div class="mdl-cell mdl-cell--2-col">
     <button *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"  class="article-btn__previous">
       << Previous Article
@@ -49,7 +49,7 @@
     <button (click)="save()" class="article-btn">Save Changes</button>
   </div>
 
-</div>
+</article>
 
 <div *ngIf="!(article)">
   <h3>No more articles</h3>
