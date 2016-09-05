@@ -1,23 +1,42 @@
-<div *ngIf="article">
-  <div>
-    <span *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"><< Previous Article </span>
-    <a [routerLink]="['']">Article List</a>
-    <span (click)="gotoNext(article)">Next Article >></span>
+<div class="mdl-grid" *ngIf="article">
+  <div class="mdl-cell mdl-cell--2-col">
+    <span *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"  class="article-previous__span">
+      << Previous Article
+    </span>
   </div>
 
-  <img src={{article.image}} />
-  <h2>{{article.title | uppercase}}</h2>
-  <p>author: {{article.author.name}}</p>
-  <p>published: {{article.publishDate | date: 'short'}}</p>
-  <div [innerHtml]="article.body"></div>
-  <div>
-    <label>image url: </label>
-    <input size="40" [(ngModel)]="article.image" placeholder="image_url" />
-    <label>Title: </label>
-    <input size="40" [(ngModel)]="article.title" placeholder="title" />
-    <textarea rows="12" cols="150" [(ngModel)]="article.body" placeholder="body" ></textarea>
+  <div class="mdl-cell mdl-cell--8-col article-title">
+    <figure>
+      <h2>{{article.title | uppercase}}</h2>
+      <figcaption class="float--left">
+        <span>by {{article.author.name}}</span>
+        <span><i>{{article.publishDate | date: 'short'}}</i></span>
+      </figcaption>
+    </figure>
   </div>
-  <button (click)="save()">Save</button>
+
+  <div class="mdl-cell mdl-cell--2-col">
+    <span (click)="gotoNext(article)" class="article-next__span">Next Article >></span>
+  </div>
+
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+    <img class="article-image" src={{article.image}} />
+  </div>
+
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+    <div [innerHtml]="article.body" class="article-body"></div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+    <div>
+      <label>image url: </label>
+      <input size="40" [(ngModel)]="article.image" placeholder="image_url" />
+      <label>Title: </label>
+      <input size="40" [(ngModel)]="article.title" placeholder="title" />
+      <textarea rows="12" cols="150" [(ngModel)]="article.body" placeholder="body" ></textarea>
+    </div>
+    <button (click)="save()">Save</button>
+  </div>
 
 </div>
 

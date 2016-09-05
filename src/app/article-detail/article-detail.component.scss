@@ -1,4 +1,66 @@
 
-img {
+.article-title {
+  h2 {
+    font-size: 2.5em;
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-family: 'Merriweather', serif;
+  }
+  span {
+    margin-left: 30px;
+  }
+}
 
+.article-body {
+  h2 {
+    font-size: 2em;
+    font-family: 'Merriweather', serif;
+  }
+  p {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+  }
+  a {
+    color: blue;
+  }
+  ul {
+    text-align: left;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.article-image {
+  max-width: 100%;
+  height: 70vh;
+}
+
+.article-next__span {
+  border: 1px solid #00a7df;
+  padding: 10px 15px;
+  border-radius: 5px 25px 25px 5px;
+  background: #75d54f;
+  color: #00a7df;
+  cursor: pointer;
+
+  &:hover {
+    color: #f79222;
+    text-shadow: 1px 1px #00a7df;
+  }
+}
+
+//TODO: should pull out to mixin
+.article-previous__span {
+  border: 1px solid #00a7df;
+  padding: 10px 15px;
+  border-radius: 25px 5px 5px 25px;
+  background: #75d54f;
+  color: #00a7df;
+  cursor: pointer;
+
+  &:hover {
+    color: #f79222; //TODO: need variable folder for color variables
+    text-shadow: 1px 1px #00a7df;
+  }
 }
