@@ -101,4 +101,12 @@ button {
   .article-image {
     height: 50vh;
   }
+  .article-btn__next {
+    @include cover();
+    min-height: $btn-height-min;
+  }
+  .article-btn__previous {
+    @include cover();
+    min-height: $btn-height-min;
+  }
 }
