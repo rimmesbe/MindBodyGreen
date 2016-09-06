@@ -1,3 +1,112 @@
-* {
-  color: #f87c08;
+@import "../../style/sass-helpers/variables";
+@import "../../style/sass-helpers/placeholders";
+@import "../../style/sass-helpers/mixins";
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-size: 1.2em;
+  &:focus {
+    outline-style: none;
+  }
+}
+
+.article-title {
+  h2 {
+    @include set-font($article-detail-title-font...);
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
+  span {
+    margin-left: 30px;
+  }
+}
+
+.article-body {
+  h2 {
+    @include set-font($article-body-h2-font...);
+  }
+  p {
+    @include set-font($article-body-p-font...);
+    text-align: left;
+  }
+  a {
+    color: blue;
+  }
+  ul {
+    text-align: left;
+  }
+}
+
+.article-image {
+  height: 70vh;
+}
+
+.article-edit {
+  label {
+    @include set-font($article-edit-label-font...);
+  }
+  textarea {
+    width: 100%;
+    line-height: 1.4em;
+  }
+  input {
+    @include set-font($article-edit-input-font...);
+    height: 5vh;
+    line-height: 5vh;
+    border: 1px solid $blue;
+  }
+}
+
+.article-btn {
+  @include btn($size: $btn-medium, $radius: $center);
+}
+
+.article-btn__next {
+  @include btn($size: $btn-medium, $radius: $right);
+}
+
+.article-btn__previous {
+  @include btn($size: $btn-medium, $radius: $left);
+}
+
+@media only screen and (max-width: 40.0624em) {
+  .mdl-grid {
+    padding: 0px;
+  }
+  .article-title {
+    figure {
+      margin: 0px;
+    }
+    h2 {
+      font-size: 2em;
+      line-height: 35px;
+      margin-top: 0px;
+    }
+  }
+  .article-body {
+    h2 {
+      font-size: 1.5em;
+      line-height: 30px;
+      margin: 0px;
+    }
+  }
+  .article-edit{
+   input {
+     width: 100%;
+   }
+  }
+  .article-image {
+    height: 50vh;
+  }
+  .article-btn__next {
+    @include cover();
+    min-height: $btn-height-min;
+  }
+  .article-btn__previous {
+    @include cover();
+    min-height: $btn-height-min;
+  }
 }

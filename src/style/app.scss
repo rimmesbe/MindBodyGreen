@@ -1,8 +1,48 @@
 // styles in src/style directory are applied to the whole page
+@import "../../node_modules/material-design-lite/src/material-design-lite.scss";
+@import "./sass-helpers/variables";
+@import "./sass-helpers/mixins";
+
 body {
-    background: #0147A7;
-    color: #fff;
+    background: #fff;
+    margin: 0;
 }
-a {
-    color: #03A9F4;
+
+footer {
+    background-color: $blue;
+    height: 60px;
+    h2 {
+        @include set-font($footer-font...);
+        line-height: 60px;
+    }
 }
+
+header {
+    background-color: $blue !important;
+    padding: 5px !important;
+    h2 {
+        @include set-font($header-font...);
+        padding-right: 30px;
+    }
+    a {
+        color: $green;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+.margin--none {
+    margin: 0px;
+}
+
+.float--right {
+    float: right;
+}
+
+.float--left {
+    float: left;
+}
+

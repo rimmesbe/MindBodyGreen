@@ -1,16 +1,18 @@
-<header>
-  <nav>
-    <a [routerLink]="['']">Article</a>
-    <a [routerLink]="['about']">About</a>
-  </nav>
-</header>
-<main>
-  <h1>MindBodyGreen</h1>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header header-style" >
+    <nav class="mdl-layout__header-row">
+      <h2 class="float--left margin--none"><a [routerLink]="['']">Articles</a></h2>
+      <div class="mdl-layout-spacer"></div>
+      <h2 class="float--right margin--none">Top articles on the web!</h2>
+    </nav>
+  </header>
+  <main class="mdl-layout__content" style="flex: 1 0 auto;">
 
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
+    <!-- Images (and assets) are parsed and loaded from within the public directory -->
 
-  <router-outlet></router-outlet>
-</main>
-<footer>
-  <a [href]="url">Webpack Angular 2 Starter</a>
-</footer>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>
+    <h2 class="margin--none">Thanks for visiting!</h2>
+  </footer>
+</div>

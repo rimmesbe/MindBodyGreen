@@ -1,0 +1,66 @@
+// colors
+$blue: #00a7df;
+$orange: #f79222;
+$green: #75d54f;
+
+// font styles
+$open-sans: 'Open Sans', sans-serif;
+$merriweather: 'Merriweather', serif;
+
+// border-radius
+$left: 25px 5px 5px 25px;
+$right: 5px 25px 25px 5px;
+$center: 15px 15px 15px 15px;
+
+//header specific variables
+$header-font: (
+  color: $orange,
+  size: 2em,
+  family: $merriweather
+);
+
+//footer specific variables
+$footer-font: (
+  color: $orange,
+  size: 2em,
+  family: $merriweather
+);
+
+//btn styles
+$btn-small: 5px 10px;
+$btn-medium: 10px 15px;
+$btn-large: 15px 20px;
+
+//article index page variables
+$article-index-title-font: (
+  color: $blue,
+  size: 4em,
+  family: $merriweather
+);
+
+//article detail page variables
+$article-detail-title-font: (
+  size: 2.5em,
+  family: $merriweather
+);
+
+$article-body-h2-font: (
+  size: 2em,
+  family: $merriweather
+);
+
+$article-body-p-font: (
+  family: $open-sans
+);
+
+$article-edit-label-font: (
+  color: $orange,
+  weight: bold
+);
+
+$article-edit-input-font: (
+  size: 1em
+);
+
+//phone display
+$btn-height-min: 62px;

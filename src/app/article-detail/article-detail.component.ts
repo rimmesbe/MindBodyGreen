@@ -2,14 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import {ArticleService} from '../shared/services/article.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Article} from '../shared/article.interface';
+import {ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'my-article-detail',
   templateUrl: './article-detail.component.html',
-  styleUrls: ['./article-detail.component.scss']
+  styleUrls: ['./article-detail.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ArticleDetailComponent implements OnInit {
   article: Article;
+  showEdit: Boolean = false;
 
   constructor(
       private _articleService: ArticleService,
@@ -38,6 +41,14 @@ export class ArticleDetailComponent implements OnInit {
   // ** this is where we would call save for updating the article **
   save(): void {
     // this._articleService.update(this.article)
+  }
+
+  getStyle() {
+    if(this.showEdit){
+      return "block";
+    } else {
+      return "none";
+    }
   }
 
 }

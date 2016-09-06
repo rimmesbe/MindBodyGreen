@@ -1,4 +1,52 @@
-// component styles are encapsulated and only applied to their components
-* {
-  color: #FFEF00;
+@import "../../style/sass-helpers/variables";
+@import "../../style/sass-helpers/mixins";
+
+$total: 28; //number of articles
+$step: 360 / $total;
+
+article {
+  list-style: none;
+  img {
+    width: 100%;
+  }
+  section {
+    cursor: pointer;
+    &:hover {
+      color: $orange;
+    }
+  }
+  h4 {
+    font-family: $open-sans;
+    padding: 0px 10px 0px 10px;
+    text-shadow: 1px 1px $green;
+  }
+}
+
+.article-title__index {
+  @include set-font($article-index-title-font...);
+  text-shadow: 1px 1px $orange;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.mdl-grid.mdl-grid--no-spacing > .mdl-cell {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.border-bottom__lightgrey {
+  border-bottom: 1px solid lightgrey;
+}
+
+@media only screen and (max-width: 40.0624em) {
+  .article-title__index {
+    text-align: center;
+    font-size: 2.3em;
+  }
+}
+
+@for $i from 1 through $total {
+  .article:nth-child(#{$i}) h4 {
+    color: adjust-hue(blue, $i * $step);
+  }
 }
