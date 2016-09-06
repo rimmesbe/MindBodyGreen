@@ -72,4 +72,33 @@ button {
   @include btn($size: $btn-medium, $radius: $left);
 }
 
-
+@media only screen and (max-width: 40.0624em) {
+  .mdl-grid {
+    padding: 0px;
+  }
+  .article-title {
+    figure {
+      margin: 0px;
+    }
+    h2 {
+      font-size: 2em;
+      line-height: 35px;
+      margin-top: 0px;
+    }
+  }
+  .article-body {
+    h2 {
+      font-size: 1.5em;
+      line-height: 30px;
+      margin: 0px;
+    }
+  }
+  .article-edit{
+   input {
+     width: 100%;
+   }
+  }
+  .article-image {
+    height: 50vh;
+  }
+}

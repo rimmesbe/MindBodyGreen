@@ -5,7 +5,7 @@
   <div class="mdl-cell mdl-cell--12-col">
     <article>
       <div class="mdl-grid mdl-grid--nesting mdl-grid--no-spacing">
-        <div *ngFor="let article of articles" class="mdl-cell mdl-cell--4-col border-bottom__lightgrey">
+        <div *ngFor="let article of articles" class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone border-bottom__lightgrey">
           <section (click)="gotoDetail(article)">
             <img src={{article.image}} />
             <h4>{{article.title}}</h4>

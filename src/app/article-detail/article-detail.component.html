@@ -1,43 +1,45 @@
 <article class="mdl-grid" *ngIf="article">
-  <div class="mdl-cell mdl-cell--2-col">
-    <button *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"  class="article-btn__previous">
-      << Previous Article
-    </button>
+  <div class="mdl-grid mdl-grid--nesting">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-cell--order-1-phone">
+      <button *ngIf="(article.id-1) > 0" (click)="gotoPrevious(article)"  class="article-btn__previous">
+        << Previous Article
+      </button>
+    </div>
+
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone  mdl-cell--order-3-phone article-title">
+      <figure>
+        <h2>{{article.title | uppercase}}</h2>
+        <figcaption class="float--left">
+          <span>by {{article.author.name}}</span>
+          <span><i>{{article.publishDate | date: 'short'}}</i></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-cell--order-2-phone">
+      <button (click)="gotoNext(article)" class="article-btn__next">Next Article >></button>
+    </div>
   </div>
 
-  <div class="mdl-cell mdl-cell--8-col article-title">
-    <figure>
-      <h2>{{article.title | uppercase}}</h2>
-      <figcaption class="float--left">
-        <span>by {{article.author.name}}</span>
-        <span><i>{{article.publishDate | date: 'short'}}</i></span>
-      </figcaption>
-    </figure>
-  </div>
-
-  <div class="mdl-cell mdl-cell--2-col">
-    <button (click)="gotoNext(article)" class="article-btn__next">Next Article >></button>
-  </div>
-
-  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop mdl-cell--4-col-phone">
     <img class="article-image" src={{article.image}} />
   </div>
 
-  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop mdl-cell--4-col-phone">
     <div [innerHtml]="article.body" class="article-body"></div>
   </div>
 
-  <div class="mdl-cell mdl-cell--12-col">
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
     <button (click)="showEdit = !showEdit;" class="article-btn">Edit Article</button>
   </div>
 
-  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset article-edit" [style.display]="getStyle()">
+  <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset-desktop mdl-cell--4-col-phone article-edit" [style.display]="getStyle()">
     <div class="mdl-grid mdl-grid--nesting">
-      <div class="mdl-cell mdl-cell--6-col">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
         <label>Image Url: </label>
         <input class="article-input" size="50" [(ngModel)]="article.image" placeholder="image_url" />
       </div>
-      <div class="mdl-cell mdl-cell--6-col">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
         <label>Title: </label>
         <input class="article-input" size="50" [(ngModel)]="article.title" placeholder="title" />
       </div>
